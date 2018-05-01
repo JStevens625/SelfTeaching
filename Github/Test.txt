@@ -1,1 +1,1 @@
-2nd Test on Tower for gpg key test. Edited git config.
+3rd Test on Tower for gpg key test. Edited git config.
