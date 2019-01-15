@@ -1,11 +1,9 @@
 #!/bin/bash
 
-NAME01="JAY"
-NAME02="JAMES"
-NAME03="JAYSON"
-NAME04="JASON"
-
-for i in `seq 1 10`;
+for i in {1..4};
 do
-	echo $i
+	N="NAME0"
+	N="$N$i"
+	array[i]=$N
 done
+echo "${array[@]}"
