@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!--Script to import JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <title>Document</title>
+    <style>
+        #submit {
+            color: "#FFF";
+        }
+    </style>
     <script>
         function hellothere (name, age){
-            document.write("Hello "+name+"You are "+age+"Years Old")
+            
+            document.write("Hello "+name+" You are "+age+" Years Old")
         }
     </script>
 </head>
 <body>
+    <p>Name:</p>     
     <input id="NameBox" type="text">
     <br />
+    <br />
+    <p>Age:</p>
     <input id="AgeBox" type="text">
     <br />
-    <input type="button" value="Say Hello!" onclick="hellothere($('#NameBox').val,$('#AgeBox').val)">
+    <br />
+    <input type="button" value="Say Hello!" onclick="hellothere(document.getElementById('NameBox').value,document.getElementById('AgeBox').value)">
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        function MakeCookie() {
+            cookievalue = document.getElementById('namebox').value
+            cookie = document.cookie='name='+cookievalue
+            document.write('Cookie Value: '+cookie)
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="Form">
+        <input type="text" id="namebox" />
+        <input type="button" id="buttonname" value="Make Cookie!" onclick="MakeCookie()" />
+        
+    </form>
+</body>
+</html>
