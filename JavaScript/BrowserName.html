@@ -5,13 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
         <script>
-            function redirect() {
-                window.location = "https://www.google.com"
+            function browsername(){
+                var browserName = navigator.appName
+                document.write(browserName)
             }
         </script>
-        <input type="button" name="redirect" value="Click Me!" onclick="redirect()">
+    </head>
+    <body>
+        <input type="button" name="redirect" value="Click Me!" onclick="browsername()">
+        <p id="browser"></p>
     </body>
 </html>
