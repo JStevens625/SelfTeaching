@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script>
+            function Warning() {
+                alert("erRor 4o4 N0t f0UnD")
+                document.write("erRor 4o4 N0t f0UnD")
+            }
+            function Confirm(){
+                var answer = confirm("Continue to Next Level?")
+                if (answer == true) {
+                    document.write("Begin Level 2!")
+                }
+                if (answer == false) {
+                    document.write("Game Over")
+                }
+            }
+            function Prompt(){
+                var name = prompt("Name Your Character!")
+                document.write("You Chose " + name)
+            }
+        </script>
+    </head>
+    <body>
+        <input type="Button" name="warner" onclick="Warning()" value="Warning Button!">
+        <input type="Button" name="confirmer" onclick="Confirm()" value="Confirm Button!">
+        <input type="Button" name="prompter" onclick="Prompt()" value="Prompt Button!">
+    </body>
+</html>
