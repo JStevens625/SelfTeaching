@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Click to replace</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <style>
+            ul{
+                font-size: 25px
+            }
+            .active{
+                background-color: #e6ac0088
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1 id="headliner">Click a list item to replace this text</h1>
+        <button id="damnbutton">Add New Item</button>
+        <ul id="thislist">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Fourth</li>
+            <li>Fifth</li>
+            <li>Sixth</li>
+        </ul>
+        <script>
+            var newitemcounter = 1;
+            var ourlist = document.getElementById("thislist");
+            //var ourlist = $("#thislist");
+            var thisdamnbutton = document.getElementById("damnbutton");
+            //var thisdamnbutton = $("#damnbutton");
+            var headline = document.getElementById("headliner");
+            var listitems = document.getElementById("thislist").getElementsByTagName("li");
+
+            function activateItem(e) {
+                if(e.target.nodeName == "LI"){
+                headline.innerHTML = e.target.innerHTML;
+                for(i=0;i < e.target.parentNode.children.length;i++){
+                    e.target.parentNode.children[i].classList.remove("active")
+                }
+                e.target.classList.add("active")
+                }
+            }
+            
+            ourlist.addEventListener("click", activateItem)
+            thisdamnbutton.addEventListener("click", createNewItem);
+
+            function createNewItem() {
+                ourlist.innerHTML += "<li>Something New "+ newitemcounter +"</li>" ;
+                newitemcounter++;
+            }
+        </script>
+    </body>
+</html>
