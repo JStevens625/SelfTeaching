@@ -1,0 +1,33 @@
+---
+title: "1st Shiny App"
+output: html_notebook
+---
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("NBA Stats"),
+  sidebarLayout(
+    sidebarPanel(
+      textInput(
+        inputId = 'firstname',
+        label = 'First Name',
+      ),
+      textInput(
+        inputId = 'lastname',
+        label = 'Last Name',
+      ),
+    ),
+    mainPanel(
+      
+    )
+  )
+)
+
+server <- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
