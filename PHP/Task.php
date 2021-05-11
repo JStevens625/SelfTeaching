@@ -1,12 +1,15 @@
 <?php
 
 class Task{
+  public $title;
+
   public $description;
 
   public $completed = false;
 
-  public function __construct($description)
+  public function __construct($title,$description)
   {
+    $this->title = $title;
     $this->description = $description;
   }
 
@@ -16,11 +19,11 @@ class Task{
   }
 
 }
-$task = new Task('Learn OOP');
-$task2 = new Task('Pick up groceries');
+$task = new Task('Learn OOP','Do this to learn OOP');
+//$task2 = new Task('Pick up groceries');
 
 $task->complete();
 
-var_dump($task->completed)
+var_dump($task)
 
 ?>
