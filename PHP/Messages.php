@@ -3,7 +3,7 @@
 require 'autoloading/Person.php';
 require 'autoloading/Business.php';
 require 'autoloading/Staff.php';
-//Instead of requireing files we can autoload using composer for now we will manually import them.
+//Instead of requireing files we can autoload using composer for now we will manually import them .
 $person1 = new Person('Joe Smith');
 
 $person2 = new Person('Jane Doe');
