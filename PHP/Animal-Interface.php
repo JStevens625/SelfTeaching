@@ -12,11 +12,11 @@ class Dog implements Animal {
   }
 }
 
-class Dog implements Animal {
+class Cat implements Animal {
   public function communicate()
   {
     return 'Meow';
   }
 }
-
+echo((new Cat)->communicate());
 ?>
