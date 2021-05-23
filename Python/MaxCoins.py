@@ -1,4 +1,4 @@
-mat = [[0,5,0,2,0],[3,0,1,0,0],[0,7,0,0,4],[4,0,0,8,0]]
+matrix = [[0,5,0,2,0],[3,0,1,0,0],[0,7,0,0,4],[4,0,0,8,0]]
 
 def maxCoin(matrix):
     maxamount = 0
@@ -14,6 +14,6 @@ def maxCoin(matrix):
     print(maxamount)
 
 def main():
-    maxCoin(mat)
+    maxCoin(matrix)
 
 main()
