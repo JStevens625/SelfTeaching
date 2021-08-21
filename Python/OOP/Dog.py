@@ -8,7 +8,15 @@ class Dog(object):
     
     def show(self):
         print(f"My name is {self.name} and I am {self.age} years old!")
+    
+    def set_age(self, age):
+        self.age = age
 
-tim = Dog("Tim",20)
-print(d1.age)
-print(d1.speak())
+tim = Dog("Tim",4)
+bill = Dog("Bill",9)
+
+tim.set_age(15)
+
+tim.show()
+bill.show()
+
