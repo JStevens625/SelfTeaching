@@ -25,16 +25,16 @@ class Point():
         return math.sqrt(self.x**2 + self.y**2)
 
     def __gt__(self, point):
-        return self.length() > p.length()
+        return self.length() > point.length()
     
     def __ge__(self, point):
-        return self.length() >= p.length()
+        return self.length() >= point.length()
     
     def __lt__(self, point):
-        return self.length() < p.length()
+        return self.length() < point.length()
     
     def __le__(self, point):
-        return self.length() <= p.length()
+        return self.length() <= point.length()
     
     def __eq__(self, point):
         return self.x == point.x and self.y == point.y
@@ -48,3 +48,7 @@ point5 = point1 + point2
 point6 = point4 - point1
 point7 = point2 * point3
 print(f"point 5: {point5}\npoint 6: {point6}\npoint 7: {point7}")
+
+print(point1 == point2)
+print(point4 >= point3)
+print(point1 < point3)
