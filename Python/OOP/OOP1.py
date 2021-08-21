@@ -3,6 +3,9 @@ class Dog(object):
         self.name = name
         self.age = age
     
-    def speak():
+    def speak(self):
         print("Bark")
-        
+
+d1 = Dog("Tim",20)
+print(d1.age)
+print(d1.speak())
