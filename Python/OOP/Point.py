@@ -19,7 +19,25 @@ class Point():
     
     def __str__(self):
         return "(" + str(self.x) + "," + str(self.y) + ")"
+    
+    def length(self):
+        import math
+        return math.sqrt(self.x**2 + self.y**2)
 
+    def __gt__(self, point):
+        return self.length() > p.length()
+    
+    def __ge__(self, point):
+        return self.length() >= p.length()
+    
+    def __lt__(self, point):
+        return self.length() < p.length()
+    
+    def __le__(self, point):
+        return self.length() <= p.length()
+    
+    def __eq__(self, point):
+        return self.x == point.x and self.y == point.y
 
 point1 = Point(3,4)
 point2 = Point(3,2)
