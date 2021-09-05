@@ -1,9 +1,7 @@
 #include <iostream>
 
 int main(){
-    while (true)
-    {
-        std::cout << "You Win!";
-    }
-    
+    std::string name = "This";
+    int num = 3;
+    std::cout << "String: " << name << "\nAnd number: " << num << std::endl;
 }
