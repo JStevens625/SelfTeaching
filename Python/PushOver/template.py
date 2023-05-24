@@ -3,8 +3,7 @@
 import requests
 import http.client, urllib
 
-#My Version
-Custom Made API Posting
+#Custom Made API Posting
 payload = {
     'user': 'USER TOKEN',
     'token': 'API TOKEN',
