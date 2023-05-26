@@ -3,3 +3,5 @@ Testing
 New test
 
 2nd Test
+
+Final test due to the GPG_TTY not working with powerlevel10k
