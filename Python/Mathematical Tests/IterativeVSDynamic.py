@@ -1,4 +1,11 @@
 import time
+import argparse
+
+parser = argparse.ArgumentParser(description="Input for Iteration of Fibonacci")
+
+args = parser.add_argument('-l', '--length', type=int, required=True, metavar='')
+
+args = parser.parse_args()
 
 def IterativeFib(n):
     arr = [0,1]
@@ -13,7 +20,7 @@ def IterativeFib(n):
         print(arr[i])
 
 def main():
-    IterativeFib(10)
+    IterativeFib(args.length)
 
 if __name__ == '__main__':
     main()
