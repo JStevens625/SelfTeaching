@@ -3,7 +3,10 @@
 import argparse
 import math
 
-parser = argparse.ArgumentParser(description="")
+parser = argparse.ArgumentParser(description="Calculate the volume of a cylinder")
+
+parser.add_argument('radius',type=int, help="Define the radius of cylinder")
+parser.add_argument('height',type=int, help="Define the height of cylinder")
 
 args = parser.parse_args()
 
@@ -12,4 +15,4 @@ def cylinder_volume(radius,height):
     return volume
 
 if __name__ == '__main__':
-    print (cylinder_volume(2,4))
+    print (cylinder_volume(args.radius,args.height))
