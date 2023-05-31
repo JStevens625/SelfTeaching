@@ -14,4 +14,7 @@ class Person(BaseModel):
 with open('people.json', 'r') as file:
     people = json.load(file)['people']
 
-print(people)
+@app.get('/person/{p_id}', status_code=200)
+def get_person(p_id: int):
+    person = [p for p in people if p['id'] == p_id]
+    return person[0] if len(person) > 0 else {}
