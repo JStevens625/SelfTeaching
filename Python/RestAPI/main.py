@@ -37,3 +37,20 @@ def search_person(age: Optional[int] = Query(None, title="Age", description="The
         else:
             combined = [p for p in people1 if p in people2]
             return combined
+
+
+@app.post('/addPerson', status_code=201)
+def add_person(person: Person):
+    p_id = max([p['id'] for p in people]) + 1
+    new_person = {
+        "id": p_id,
+        "name": person.name,
+        "age": person.age,
+        "gender": person.gender
+    }
+
+    people.append(new_person)
+
+    with open('people.json','w') as file:
+        json.dump(people, file)
+    return new_person
