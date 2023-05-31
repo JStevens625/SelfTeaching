@@ -73,3 +73,13 @@ def change_person(person: Person):
             json.dump(people, file)
     else:
         return HTTPException(status_code=404, detail=f"person with id{person.id} does not exist")
+
+@app.delete('/deletePerson/{p_id}')
+def delete_person(p_id: int):
+    person = [p for p in people if p['id'] == p_id]
+    if len(person) > 0:
+        people.remove(person[0])
+        with open('people.json', 'w') as file:
+            json.dump(people, file)
+    else:
+        raise HTTPException(status_code=404, detail=f"There is no person with id {p_id}")
