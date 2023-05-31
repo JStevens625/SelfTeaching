@@ -1,15 +1,17 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import Optional
+import json
 
 app = FastAPI()
 
-@app.get('/hello')
-def hello():
-    return {"Hello: World"}
+class Person(BaseModel):
+    id: Optional[int] = None
+    name: str
+    age: int
+    gender: str
 
-@app.post('/')
-def hello_post():
-    return {"Success: You posted!"}
+with open('people.json', 'r') as file:
+    people = json.load(file)['people']
 
-@app.get('/something')
-def hello():
-    return {"Data: Something"}
+print(people)
