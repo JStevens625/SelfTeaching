@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 import json
@@ -12,7 +12,7 @@ class Person(BaseModel):
     gender: str
 
 with open('people.json', 'r') as file:
-    people = json.load(file)['people']
+    people = json.load(file)
 
 @app.get('/person/{p_id}', status_code=200)
 def get_person(p_id: int):
@@ -54,3 +54,22 @@ def add_person(person: Person):
     with open('people.json','w') as file:
         json.dump(people, file)
     return new_person
+
+
+@app.put('/changePerson', status_code=204)
+def change_person(person: Person):
+    new_person = {
+        "id": person.id,
+        "name": person.name,
+        "age": person.age,
+        "gender": person.gender
+    }
+
+    person_list = [p for p in people if p['id'] == person.id]
+    if len(person_list) > 0:
+        people.remove(person_list[0])
+        people.append(new_person)
+        with open('people.json','w') as file:
+            json.dump(people, file)
+    else:
+        return HTTPException(status_code=404, detail=f"person with id{person.id} does not exist")
