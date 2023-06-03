@@ -5,9 +5,10 @@ class Person:
 
     def __init__(self, name):
         self.name = name
+        Person.number_of_people += 1
 
+print(Person.number_of_people)
 p1 = Person("Tim")
+print(Person.number_of_people)
 p2 = Person("Jill")
-
-Person.number_of_people = 8
-print(p1.number_of_people)
+print(Person.number_of_people)
