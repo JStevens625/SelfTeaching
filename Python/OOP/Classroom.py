@@ -25,3 +25,6 @@ class Course:
         pass
 
 
+student1 = Student("Tim", 18, 70)
+student2 = Student("Bill", 18, 90)
+student3 = Student("Jill", 19, 97)
